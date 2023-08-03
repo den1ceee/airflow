@@ -47,8 +47,7 @@ def airflow_rank():
             f.write('airflow.com is not found')
         else:
             airflow_rank = top_doms[top_doms['url'] == 'airflow.com']['rank']
-            f.write(airflow_rank)
-
+            f.write(airflow_rank.to_csv(index=False, header=False))
 
 def print_data(ds):
     with open('top_10_doms.csv', 'r') as f:
